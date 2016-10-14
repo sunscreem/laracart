@@ -656,7 +656,7 @@ class LaraCart implements LaraCartContract
      */
     public static function formatMoney($number, $locale = null, $internationalFormat = null, $format = true)
     {
-        $number = number_format($number, 2, '.', '');
+        $number = number_format($number, 3, '.', '');
 
         if ($format) {
             setlocale(LC_MONETARY, null);
