@@ -601,6 +601,8 @@ class LaraCart implements LaraCartContract
             return (Country::find(session('shop.delivery-country'))->eea ? $totalTax : 0);
 
         }
+        
+        return $totalTax;
     }
 
     /**
