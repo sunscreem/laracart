@@ -581,6 +581,8 @@ class LaraCart implements LaraCartContract
             }
         }
 
+        $totalTax = $this->checkForNonEEADeliveryAddress($totalTax);
+        
         return $this->formatMoney($totalTax, null, null, $format);
     }
     
