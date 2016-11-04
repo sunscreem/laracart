@@ -2,6 +2,7 @@
 
 namespace LukePOLO\LaraCart;
 
+use App\Country;
 use Illuminate\Auth\AuthManager;
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Database\Eloquent\Model;
