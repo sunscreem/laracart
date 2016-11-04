@@ -583,6 +583,23 @@ class LaraCart implements LaraCartContract
 
         return $this->formatMoney($totalTax, null, null, $format);
     }
+    
+     /**
+     * Dirty 'override' for the tax.
+     * If we have a delivery country that's not the uk
+     *  we maybe dont have any tax at all
+
+     * @param  [type] $totalTax [description]
+     * @return [type]           [description]
+     */
+    public function checkForNonEEADeliveryAddress($totalTax)
+    {
+        if (session('shop.delivery-country',826) != 826) {
+     
+            return (Country::find(session('shop.delivery-country'))->eea ? $totalTax : 0);
+
+        }
+    }
 
     /**
      * Gets the total of the cart with or without tax.
